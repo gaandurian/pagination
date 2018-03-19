@@ -30,11 +30,11 @@ function* run(settings) {
     yield nightmare.click(adSelector)
   yield nightmare.screenshot('opened-page.png')
 
-  if (paginationType == 'visible' || paginationType == 'disabled') {
+  if (paginationType === 'visible' || paginationType === 'disabled') {
 
-  if (paginationType == 'visible')
+  if (paginationType === 'visible')
     nextExists = yield nightmare.visible(pageSelector)
-  else if (paginationType == 'disbaled')
+  else if (paginationType === 'disbaled')
     nextExists = yield nightmare.exists(pageSelector)
 
   while (exit < 2) {
@@ -68,7 +68,7 @@ function* run(settings) {
   } // END OF while(exit < 2)
 } // END OF visible and disabled
 
-else if (paginationType == 'showall') {
+else if (paginationType === 'showall') {
 
   if(yield nightmare.exists(pageSelector))
     yield nightmare.click(pageSelector)
@@ -79,7 +79,7 @@ else if (paginationType == 'showall') {
       $(productSelector).each(function(i, elm) {
         let item = {
           index: i,
-          title: $(this).find('h2.title span.name').text().trim(),
+          // title: $(this).find('h2.title span.name').text().trim(),
           link: $(this).find(linkSelector).attr('href'),
         }
         products.push(item) // push a product to our products array
