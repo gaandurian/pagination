@@ -22,7 +22,22 @@ var settingsArr = [{
   linkSelector:     'a.product-name',
   pageSelector:     '.showall button',
   adSelector:       '.noAdToClose'
+}, {
+  targetUrl: 'https://www.wiki.tn/pc-portable-120.html',
+  paginationType:   'showall',
+  productSelector:  'div.ajax_block_product div.product-container',
+  linkSelector:     'a.product-name',
+  pageSelector:     '.showall button',
+  adSelector:       '.noAdToClose'
+}, {
+  targetUrl: 'https://www.wiki.tn/telephones-portables-257.html',
+  paginationType:   'showall',
+  productSelector:  'div.ajax_block_product div.product-container',
+  linkSelector:     'a.product-name',
+  pageSelector:     '.showall button',
+  adSelector:       '.noAdToClose'
 }]
+
 var i = -1
 asyncLoop(settingsArr, (item, next) => {
   var run = pagination.run(item)
@@ -35,6 +50,12 @@ asyncLoop(settingsArr, (item, next) => {
     // res fiha tableau fih les lien w titre mtaa kol produit fl paget lkol
     console.log(JSON.stringify(res, undefined, 2))
     fs.writeFileSync(`pagination_${i}.json`, JSON.stringify(res, undefined, 3))
+
+    asyncLoop(res, (item, next) => {
+      item.description = 'this is a short description'
+      console.log(item)
+      next()
+    })
     next()
   })
 })

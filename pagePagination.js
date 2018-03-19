@@ -8,7 +8,7 @@ const jquery = require('jquery')
 const fs = require('fs');
 
 function* run(settings) {
-  console.log('Running pagination for setting: \n', settings)
+  console.log('Running pagination for settings: \n', settings)
 
   var targetUrl = settings.targetUrl // houa el lien mtaa el category el bech nfetchiw menha données
   var paginationType = settings.paginationType // showall, disabled, visible

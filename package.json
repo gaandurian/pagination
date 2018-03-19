@@ -1,0 +1,21 @@
+{
+  "name": "pagination",
+  "version": "0.0.1",
+  "description": "Web data extraction pagination per link for my PFE project",
+  "main": "pagination.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/ghndr/pagination.git"
+  },
+  "author": "Mahmoud Ghandour",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.3.1",
+    "node-async-loop": "^1.2.2",
+    "vo": "^4.0.2",
+    "nightmare": "^5.6.0"
+  }
+}
